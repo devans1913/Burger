@@ -4,10 +4,6 @@ var exphandles = require("express-handlebars");
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
-// Import routes and give the server access
-var routes = require("./controllers/burgers_controller.js");
-
-
 var app = express();
 app.set("port", (process.env.PORT || 3306));
 
@@ -19,6 +15,9 @@ app.use(methodOverride("_method"));
 // Set Handlebars.
 app.engine("handlebars", exphandles({ defaultLayout: "main",}));
 app.set("view engine", "handlebars");
+
+// Import routes and give the server access
+var routes = require("./controllers/burgers_controller.js");
 
 
 app.use('/', routes);

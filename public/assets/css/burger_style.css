@@ -1,5 +1,5 @@
 body {
-	background-color: #e9d36b;
+	background-color: black;
 	font-family: 'Montserrat', sans-serif;
 
 }
@@ -9,11 +9,11 @@ body {
 }
 */
 h1 {
-	color: #971515;
+	color: white;
 }
 
 .list-group-item {
-	background-color: #f1f1ed;
+	background-color:red;
 
 }
 
