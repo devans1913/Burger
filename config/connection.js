@@ -8,13 +8,12 @@ if (process.env.JAWSDB_URL) {
   
   connection = mysql.createConnection({
     host: 'localhost',
-    port: 8080,
+    port: 3306,
     user: 'root',
-    password: process.env.DATABASE_PASSWORD,
+    password: 'VeriShip$18',
     database: "burgers_db"
   })
 }
-
 
 // Secure connection
 connection.connect(function (err) {
