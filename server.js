@@ -1,14 +1,12 @@
 //Dependencies
 var express = require("express");
-var exphandles = require("express-handlebars");
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var exphandles = require("express-handlebars");
 
 var app = express();
-app.set("port", (process.env.PORT || 3306));
-
-
-app.use(express.static(process.cwd() + "/public"));
+app.use(express.static(__dirname + '/public'));
+	
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(methodOverride("_method"));
 
@@ -17,11 +15,11 @@ app.engine("handlebars", exphandles({ defaultLayout: "main",}));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access
-var routes = require("./controllers/burgers_controller.js");
-
+var routes = require('./controllers/burgers_controller.js');
 
 app.use('/', routes);
-app.listen(app.get("port"), function() {
-	console.log("You are running on port 3306", app.get("port"));
-});
+var port=8080;
+app.listen(port);
+
+
 
