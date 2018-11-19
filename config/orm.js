@@ -1,5 +1,5 @@
 //Dependencies
-var connection = require("./connection.js");
+var connection = require("../config/connection");
 
 // Helper function for SQL
 function printQuestionMarks(num) {
